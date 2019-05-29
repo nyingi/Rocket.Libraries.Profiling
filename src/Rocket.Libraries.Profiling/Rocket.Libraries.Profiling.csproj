@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DebugType>portable</DebugType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>Rocket.Libraries.Profiling</AssemblyName>
+    <OutputType>Library</OutputType>
+    <PackageId>Rocket.Libraries.Profiling</PackageId>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CodeAnalysisRuleSet>../../stylecop.ruleset</CodeAnalysisRuleSet>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+    <RootNamespace>Rocket.Libraries.Profiling</RootNamespace>
+    <Version>1.1.1</Version>
+    <Description>Simple and light-weight dotnet profiler, that allows writing to a user defined target, while mostly staying out of your way.</Description>
+    <ApplicationIcon />
+    <OutputTypeEx>library</OutputTypeEx>
+    <StartupObject />
+  </PropertyGroup>
+</Project>
