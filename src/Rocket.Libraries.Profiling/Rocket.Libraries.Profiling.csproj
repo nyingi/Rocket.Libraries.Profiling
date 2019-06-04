@@ -11,7 +11,7 @@
     <CodeAnalysisRuleSet>../../stylecop.ruleset</CodeAnalysisRuleSet>
     <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
     <RootNamespace>Rocket.Libraries.Profiling</RootNamespace>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <Description>Simple and light-weight dotnet profiler, that allows writing to a user defined target, while mostly staying out of your way.</Description>
     <ApplicationIcon />
     <OutputTypeEx>library</OutputTypeEx>

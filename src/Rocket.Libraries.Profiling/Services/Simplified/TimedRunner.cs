@@ -45,7 +45,7 @@ namespace Rocket.Libraries.Profiling.Services.Simplified
         public async Task<TResult> TimeAsync<TResult>(Func<Task<TResult>> fnAsync, string tag = "", [CallerLineNumber] int lineNumber = 0, [CallerFilePath] string filename = "")
         {
             var actualTag = GetActualTag(tag, lineNumber, filename);
-            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled))
+            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled, lineNumber, filename))
             {
                 return await fnAsync();
             }
@@ -62,7 +62,7 @@ namespace Rocket.Libraries.Profiling.Services.Simplified
         public async Task TimeAsync(Func<Task> fnAsync, string tag = "", [CallerLineNumber] int lineNumber = 0, [CallerFilePath] string filename = "")
         {
             var actualTag = GetActualTag(tag, lineNumber, filename);
-            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled))
+            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled, lineNumber, filename))
             {
                 await fnAsync();
             }
@@ -79,7 +79,7 @@ namespace Rocket.Libraries.Profiling.Services.Simplified
         public TResult Time<TResult>(Func<TResult> fn, string tag = "", [CallerLineNumber] int lineNumber = 0, [CallerFilePath] string filename = "")
         {
             var actualTag = GetActualTag(tag, lineNumber, filename);
-            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled))
+            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled, lineNumber, filename))
             {
                 return fn();
             }
@@ -95,7 +95,7 @@ namespace Rocket.Libraries.Profiling.Services.Simplified
         public void Time(Action fn, string tag = "", [CallerLineNumber] int lineNumber = 0, [CallerFilePath] string filename = "")
         {
             var actualTag = GetActualTag(tag, lineNumber, filename);
-            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled))
+            using (new ProfilerService(a => _profilingInformationTarget.OnInformationReceived(a), actualTag, !Enabled, lineNumber, filename))
             {
                 fn();
             }
